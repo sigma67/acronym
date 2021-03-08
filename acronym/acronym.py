@@ -173,11 +173,15 @@ def main():
                         help='file to save results (prints to STDOUT if not given)')
     parser.add_argument('--strict', '-s', action='count',
                         help='How strictly should the words be related to real English? (-s for strict, -ss for very strict)')
+    parser.add_argument('--path', '-p', action='count',
+                        help='Path to TigerCORPUS file (download from https://www.ims.uni-stuttgart.de/documents/ressourcen/korpora/tiger-corpus/download/start.html )')
     parser.add_argument('--version', action='version', version='%(prog)s' + f'{__version__}')
     args = parser.parse_args()
 
     if args.strict in [0, None]:
-        corpus = nltk.corpus.words
+        corpus = nltk.corpus.ConllCorpusReader(args.path, 'tiger_release_aug07.corrected.16012013.conll09',
+                                     ['ignore', 'words', 'ignore', 'ignore', 'pos'],
+                                     encoding='utf-8')
     elif args.strict == 1:
         corpus = nltk.corpus.brown
     else:

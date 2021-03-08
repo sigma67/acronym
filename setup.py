@@ -58,7 +58,7 @@ description = """ACRONYM (Acronym CReatiON for You and Me)"""
 
 setup(
     name='acronym',
-    version=find_version('acronym', '__init__.py'),
+    version=2,
     author='Ben Cook',
     author_email='bacook17@gmail.com',
     entry_points=entry_points,

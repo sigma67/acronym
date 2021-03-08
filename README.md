@@ -1,6 +1,12 @@
 # ACRONYM (Acronym CReatiON for You and Me)
 =====
 
+This fork of acronym was adjusted to take a --path parameter to load a coNLL corpus such as the German corpus TIGER. Provide the path you downloaded the TIGER coNLL dataset as a parameter and use the -s parameter to get german language results.
+
+Original README below.
+
+---
+
 A python-based tool for creating English-ish Acronyms from your fancy project
 
 `ACRONYM` is described in this paper released on the arXiv: https://arxiv.org/abs/1903.12180
